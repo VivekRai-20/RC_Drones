@@ -12,6 +12,7 @@ import {
 import { useCart } from "../../contexts/CartContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { getProductById, type Product } from "../../data/products";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const ProductDetails = () => {
   const [qty, setQty] = useState(1);
@@ -21,6 +22,7 @@ const ProductDetails = () => {
   const { addToCart } = useCart();
   const navigate = useNavigate();
   const { id } = useParams();
+  const { scrollToTop } = useScrollToTop();
 
   const imageMedia = product?.media.filter(m => m.type === 'image') || [];
 
@@ -44,6 +46,11 @@ const ProductDetails = () => {
       price: product.price,
       image: product.media.find((m) => m.type === "image")?.src || "",
     });
+
+    // Scroll to top after adding to cart
+    setTimeout(() => {
+      scrollToTop();
+    }, 100);
   };
 
   if (loading) {
@@ -74,9 +81,13 @@ const ProductDetails = () => {
           <p className="text-gray-600 mb-6">The product you're looking for doesn't exist.</p>
           <button
             onClick={() => navigate("/shop")}
-            className="px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition cursor-pointer"
           >
-            Back to Shop
+            <button
+              className="flex-1 rounded-md border border-black/20 px-4 sm:px-6 py-2 sm:py-3 text-sm hover:bg-gray-50 transition cursor-pointer"
+              onClick={() => { scrollToTop(); }}
+            >
+              Buy Now
+            </button>
           </button>
         </div>
       </section>
@@ -92,7 +103,7 @@ const ProductDetails = () => {
         >
           <FiArrowLeft className="mr-1" /> Back to shop
         </button>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 lg:gap-12 lg:grid-cols-2">
           {/* MEDIA */}
           <div>
             <div className="relative overflow-hidden rounded-2xl bg-black group">
@@ -221,7 +232,10 @@ const ProductDetails = () => {
                 >
                   <FiShoppingCart /> Add to Cart
                 </button>
-                <button className="flex-1 rounded-md border border-black/20 px-4 sm:px-6 py-2 sm:py-3 text-sm hover:bg-gray-50 transition cursor-pointer">
+                <button
+                  className="flex-1 rounded-md border border-black/20 px-4 sm:px-6 py-2 sm:py-3 text-sm hover:bg-gray-50 transition cursor-pointer"
+                  onClick={() => { scrollToTop(); }}
+                >
                   Buy Now
                 </button>
               </div>

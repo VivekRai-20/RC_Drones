@@ -24,7 +24,7 @@ const Navbar = () => {
             <Link to="/shop" className="hover:text-black transition cursor-pointer">Shop</Link>
             <Link to="/smart-gadgets" className="hover:text-black transition cursor-pointer">Smart Gadgets</Link>
             <Link to="/about" className="hover:text-black transition cursor-pointer">About Us</Link>
-           
+
           </nav>
 
           {/* Right Actions */}

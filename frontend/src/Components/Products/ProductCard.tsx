@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext";
 import { FiShoppingCart } from "react-icons/fi";
 import type { Product } from "../../data/products";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const ProductCard = ({ product }: { product: Product }) => {
   const { addToCart } = useCart();
+  const { scrollToTop } = useScrollToTop();
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -15,6 +17,12 @@ const ProductCard = ({ product }: { product: Product }) => {
       price: product.price,
       image: product.media.find((m) => m.type === "image")?.src || ""
     });
+  };
+
+  const handleDetailsClick = () => {
+    setTimeout(() => {
+      scrollToTop();
+    }, 100);
   };
   return (
     <Link
@@ -52,6 +60,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             Add to Cart
           </button>
           <button
+            onClick={handleDetailsClick}
             className="flex-1 text-center text-xs sm:text-sm rounded-md border border-black/20
             py-1.5 sm:py-2 text-gray-700 hover:bg-gray-100 transition cursor-pointer"
           >
