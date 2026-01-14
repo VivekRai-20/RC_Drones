@@ -1,5 +1,6 @@
 import { Header } from '../Common/Header'
 import Footer from '../Common/Footer'
+import ScrollToTop from '../Common/ScrollToTop'
 import { Outlet } from 'react-router-dom'
 
 const UserLayout = () => {
@@ -14,8 +15,8 @@ const UserLayout = () => {
       </main>
       {/* Footer */}
       <Footer />
-
-
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </>
   )
 }
