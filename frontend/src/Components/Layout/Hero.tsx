@@ -18,7 +18,7 @@ const Hero = () => {
       {/* RC DRONES - Top Left */}
       <div className="absolute left-4 top-4 z-10 sm:left-6 sm:top-6">
         <p className="font-zentry text-white/80
-          text-4xl sm:text-6xl lg:text-9xl">
+          text-2xl sm:text-4xl lg:text-6xl">
           RC DRONES
         </p>
       </div>
@@ -29,23 +29,23 @@ const Hero = () => {
           sm:mb-20 sm:mr-16 sm:max-w-3xl">
 
           <h1 className="mb-4 font-zentry leading-[1.1]
-            text-3xl sm:text-5xl lg:text-7xl">
+            text-xl sm:text-3xl lg:text-5xl">
             Precision Drones <br />
             for Next-Gen Vision
           </h1>
 
-          <p className="mb-6 ml-auto max-w-xs text-sm
-            sm:mb-8 sm:max-w-xl sm:text-lg
+          <p className="mb-6 ml-auto max-w-xs text-xs
+            sm:mb-8 sm:max-w-xl sm:text-base
             font-general text-gray-200">
             High-performance drones and affordable toy drones built for
             exploration, innovation, and fun.
           </p>
 
-          <div className="flex justify-end gap-3 sm:gap-6">
+          <div className="flex justify-end gap-2 sm:gap-4">
             <a
               href="/shop"
-              className="rounded-md bg-white px-5 py-2.5 text-xs font-medium text-black
-              sm:px-8 sm:py-3 sm:text-sm
+              className="rounded-md bg-white px-3 py-2 text-xs font-medium text-black
+              sm:px-6 sm:py-2.5 sm:text-sm
               hover:bg-gray-100 transition cursor-pointer"
             >
               Shop Now
@@ -53,8 +53,8 @@ const Hero = () => {
 
             <a
               href="/popular"
-              className="rounded-md border border-white/40 px-5 py-2.5 text-xs
-              sm:px-8 sm:py-3 sm:text-sm
+              className="rounded-md border border-white/40 px-3 py-2 text-xs
+              sm:px-6 sm:py-2.5 sm:text-sm
               text-white hover:bg-white hover:text-black transition cursor-pointer"
             >
               Popular

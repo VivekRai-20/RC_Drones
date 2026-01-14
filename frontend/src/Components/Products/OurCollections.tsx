@@ -27,20 +27,20 @@ const collections = [
 
 const OurCollections = () => {
     return (
-        <section className="bg-[#fdf6ee] px-4 py-20 sm:px-8 lg:px-16">
+        <section className="bg-[#fdf6ee] px-4 py-12 sm:py-16 sm:px-8 lg:px-16">
 
             {/* Section Heading */}
-            <div className="mb-14 max-w-3xl">
-                <h2 className="font-zentry text-4xl sm:text-5xl text-gray-900">
+            <div className="mb-10 sm:mb-14 max-w-3xl">
+                <h2 className="font-zentry text-2xl sm:text-4xl lg:text-5xl text-gray-900">
                     Our Collections
                 </h2>
-                <p className="mt-3 font-circular-web text-gray-600">
-                    Precision-engineered drones and smart gadgets for the future.
+                <p className="mt-3 font-circular-web text-sm sm:text-base text-gray-600">
+                    Precision-engineered drones and smart gadgets for future.
                 </p>
             </div>
 
             {/* Bento Grid */}
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[240px]">
+            <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[200px] sm:auto-rows-[240px]">
 
                 {collections.map((item, index) => (
                     <div
@@ -63,18 +63,18 @@ const OurCollections = () => {
                         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/55 transition" />
 
                         {/* Content */}
-                        <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
+                        <div className="relative z-10 flex h-full flex-col justify-end p-4 sm:p-6 text-white">
 
                             <h3
                                 className={`font-zentry
-                ${item.big ? "text-3xl sm:text-4xl lg:text-5xl" : "text-2xl"}`}
+                ${item.big ? "text-xl sm:text-3xl lg:text-4xl" : "text-lg sm:text-xl"}`}
                             >
                                 {item.title}
                             </h3>
 
                             <p
                                 className={`mt-2 max-w-xs font-circular-web text-gray-200
-                ${item.big ? "text-sm sm:text-base" : "text-sm"}`}
+                ${item.big ? "text-xs sm:text-base" : "text-xs sm:text-sm"}`}
                             >
                                 {item.description}
                             </p>
@@ -82,12 +82,13 @@ const OurCollections = () => {
                             {/* Button */}
                             <a
                                 href={item.href}
-                                className="mt-5 inline-flex w-fit items-center gap-2
-                rounded-md bg-white px-5 py-2 text-sm font-general text-black
+                                className="mt-3 sm:mt-5 inline-flex w-fit items-center gap-2
+                rounded-md bg-white px-3 py-1.5 text-xs font-general text-black
+                sm:px-5 sm:py-2 sm:text-sm
                 transition hover:bg-gray-100"
                             >
                                 {item.button}
-                                <span className="text-lg">→</span>
+                                <span className="text-base sm:text-lg">→</span>
                             </a>
 
                         </div>

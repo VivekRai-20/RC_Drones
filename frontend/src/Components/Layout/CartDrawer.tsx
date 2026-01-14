@@ -45,7 +45,7 @@ const CartDrawer = () => {
 
       {/* Drawer */}
       <aside
-        className={`fixed right-0 top-0 z-50 h-full w-[90%] max-w-sm
+        className={`fixed right-0 top-0 z-50 h-full w-[85%] sm:w-[90%] max-w-sm
         bg-[#fdf6ee] shadow-xl
         transform transition-transform duration-300 ease-in-out
         ${isDrawerOpen ? "translate-x-0" : "translate-x-full"}`}

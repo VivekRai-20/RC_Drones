@@ -9,17 +9,17 @@ const SmartGadgets = () => {
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="font-zentry text-4xl sm:text-5xl text-gray-900">
+        <div className="mb-8 sm:mb-12">
+          <h1 className="font-zentry text-2xl sm:text-4xl lg:text-5xl text-gray-900">
             Smart Gadgets
           </h1>
-          <p className="mt-2 max-w-xl text-sm sm:text-base text-gray-600">
+          <p className="mt-2 max-w-lg text-sm sm:text-base text-gray-600">
             Smart accessories and gadgets to elevate your drone experience.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {smartGadgets.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

@@ -103,14 +103,14 @@ const ProductDetails = () => {
                   muted
                   loop
                   playsInline
-                  className="h-[420px] w-full object-contain sm:h-[520px] bg-black"
+                  className="h-[300px] sm:h-[420px] w-full object-contain bg-black"
                 />
               ) : (
                 activeMedia && (
                   <img
                     src={activeMedia.src}
                     alt={product.name}
-                    className="h-[420px] w-full object-contain sm:h-[520px] bg-black cursor-pointer"
+                    className="h-[300px] sm:h-[420px] w-full object-contain bg-black cursor-pointer"
                   />
                 )
               )}
@@ -148,7 +148,7 @@ const ProductDetails = () => {
               )}
             </div>
 
-            <div className="mt-4 grid grid-cols-5 gap-2">
+            <div className="mt-3 grid grid-cols-4 sm:grid-cols-5 gap-1 sm:gap-2">
               {product.media.map((item, index) => (
                 <button
                   key={index}
@@ -161,11 +161,11 @@ const ProductDetails = () => {
                 >
                   {item.type === "video" ? (
                     <>
-                      <video src={item.src} muted className="h-16 w-full object-cover" />
+                      <video src={item.src} muted className="h-12 sm:h-16 w-full object-cover" />
                       <FiPlay className="absolute inset-0 m-auto text-white text-sm" />
                     </>
                   ) : (
-                    <img src={item.src} className="h-16 w-full object-cover" />
+                    <img src={item.src} className="h-12 sm:h-16 w-full object-cover" />
                   )}
                 </button>
               ))}
@@ -174,11 +174,11 @@ const ProductDetails = () => {
 
           {/* INFO */}
           <div className="flex flex-col justify-center">
-            <h1 className="font-zentry text-4xl sm:text-5xl text-gray-900">
+            <h1 className="font-zentry text-2xl sm:text-3xl lg:text-4xl text-gray-900">
               {product.name}
             </h1>
 
-            <div className="mt-3 flex items-center gap-2 text-sm text-gray-700">
+            <div className="mt-2 sm:mt-3 flex items-center gap-2 text-sm text-gray-700">
               <div className="flex gap-1 text-yellow-500">
                 {[...Array(5)].map((_, i) => (
                   <FiStar
@@ -190,38 +190,38 @@ const ProductDetails = () => {
               <span>({product.reviews} Reviews)</span>
             </div>
 
-            <p className="mt-5 text-2xl font-semibold">₹{product.price}</p>
+            <p className="mt-3 sm:mt-5 text-lg sm:text-2xl font-semibold">₹{product.price}</p>
 
             <p className="mt-4 max-w-xl text-gray-600">
               {product.description}
             </p>
 
-            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-700">
+            <ul className="mt-4 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-700">
               {product.features.map((feature, index) => (
                 <li key={index}>✔ {feature}</li>
               ))}
             </ul>
 
             {/* ACTIONS */}
-            <div className="mt-8 flex flex-wrap items-center gap-6">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-wrap items-center gap-4">
               <div className="flex items-center rounded-md border">
-                <button onClick={() => setQty(qty > 1 ? qty - 1 : 1)} className="px-3 py-2 cursor-pointer hover:bg-gray-100 transition-colors">
+                <button onClick={() => setQty(qty > 1 ? qty - 1 : 1)} className="px-2 sm:px-3 py-1.5 sm:py-2 cursor-pointer hover:bg-gray-100 transition-colors">
                   <FiMinus />
                 </button>
-                <span className="px-4">{qty}</span>
-                <button onClick={() => setQty(qty + 1)} className="px-3 py-2 cursor-pointer hover:bg-gray-100 transition-colors">
+                <span className="px-3 sm:px-4">{qty}</span>
+                <button onClick={() => setQty(qty + 1)} className="px-2 sm:px-3 py-1.5 sm:py-2 cursor-pointer hover:bg-gray-100 transition-colors">
                   <FiPlus />
                 </button>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   onClick={handleAddToCart}
-                  className="flex-1 flex items-center justify-center gap-2 rounded-md bg-black px-6 py-3 text-sm text-white hover:opacity-90 transition cursor-pointer"
+                  className="flex-1 flex items-center justify-center gap-2 rounded-md bg-black px-4 sm:px-6 py-2 sm:py-3 text-sm text-white hover:opacity-90 transition cursor-pointer"
                 >
                   <FiShoppingCart /> Add to Cart
                 </button>
-                <button className="flex-1 rounded-md border border-black/20 px-6 py-3 text-sm hover:bg-gray-50 transition cursor-pointer">
+                <button className="flex-1 rounded-md border border-black/20 px-4 sm:px-6 py-2 sm:py-3 text-sm hover:bg-gray-50 transition cursor-pointer">
                   Buy Now
                 </button>
               </div>

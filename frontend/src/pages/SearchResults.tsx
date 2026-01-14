@@ -34,7 +34,7 @@ const SearchResults = () => {
                 {/* Results */}
                 {isSearching ? (
                     <div className="animate-pulse">
-                        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        <div className="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                             {[...Array(8)].map((_, index) => (
                                 <div key={index} className="rounded-2xl border border-black/10 bg-white/70 p-4">
                                     <div className="h-64 bg-gray-200 rounded-xl mb-4"></div>
@@ -49,7 +49,7 @@ const SearchResults = () => {
                         <p className="text-gray-600 mb-8">
                             Found {searchResults.length} result{searchResults.length !== 1 ? "s" : ""} for "{query}"
                         </p>
-                        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        <div className="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                             {searchResults.map((product) => (
                                 <ProductCard key={product.id} product={product} />
                             ))}

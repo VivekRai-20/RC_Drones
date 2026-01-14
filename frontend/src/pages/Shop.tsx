@@ -7,8 +7,8 @@ const Shop = () => {
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="font-zentry text-4xl sm:text-5xl text-gray-900">
+        <div className="mb-8 sm:mb-12">
+          <h1 className="font-zentry text-2xl sm:text-4xl lg:text-5xl text-gray-900">
             Shop
           </h1>
           <p className="mt-2 text-gray-600">
@@ -17,7 +17,7 @@ const Shop = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

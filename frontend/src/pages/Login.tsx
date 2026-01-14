@@ -19,19 +19,19 @@ const Login = () => {
   };
 
   return (
-    <section className="min-h-screen bg-[#fdf6ee] flex items-center justify-center px-4">
-      <div className="w-full max-w-md rounded-2xl border border-black/10 bg-white/70 backdrop-blur p-8 shadow-sm">
+    <section className="min-h-screen bg-[#fdf6ee] px-4 py-8 sm:py-16 flex items-center justify-center">
+      <div className="w-full max-w-sm sm:max-w-md rounded-2xl border border-black/10 bg-white/70 backdrop-blur p-6 sm:p-8 shadow-sm">
 
         {/* Heading */}
-        <h1 className="mb-2 text-center font-zentry text-3xl text-gray-900">
+        <h1 className="mb-2 text-center font-zentry text-2xl sm:text-3xl text-gray-900">
           Welcome Back
         </h1>
-        <p className="mb-8 text-center text-sm text-gray-600">
+        <p className="mb-6 text-center text-sm text-gray-600">
           Login to your drone account
         </p>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
 
           {/* Email */}
           <div>
